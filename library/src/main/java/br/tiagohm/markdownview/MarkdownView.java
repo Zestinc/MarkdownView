@@ -2,6 +2,7 @@ package br.tiagohm.markdownview;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.text.TextUtils;
 import android.util.AttributeSet;
@@ -274,6 +275,10 @@ public class MarkdownView extends WebView {
 
     public void loadMarkdownFromAsset(String path) {
         loadMarkdown(Utils.getStringFromAssetFile(getContext().getAssets(), path));
+    }
+
+    public void loadMarkdownFromContentUri(Uri uri) {
+        loadMarkdown(Utils.getStringFromContentUri(getContext(), uri));
     }
 
     public void loadMarkdownFromFile(File file) {

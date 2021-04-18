@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
 apply plugin: 'com.github.dcendents.android-maven'
 
 group = 'com.github.tiagohm'
@@ -42,4 +43,8 @@ dependencies {
     implementation 'com.vladsch.flexmark:flexmark-ext-attributes:0.28.32'
     //Logger
     implementation 'com.orhanobut:logger:1.15'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+}
+repositories {
+    mavenCentral()
 }

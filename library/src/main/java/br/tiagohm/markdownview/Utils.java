@@ -1,6 +1,9 @@
 package br.tiagohm.markdownview;
 
+import android.content.Context;
 import android.content.res.AssetManager;
+import android.net.Uri;
+import android.util.Log;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -28,7 +31,31 @@ public class Utils {
 
         try {
             is = asset.open(filename);
-            return getStringFromInputStream(is);
+            String string = getStringFromInputStream(is);
+            Log.i("zestinc", "string = " + string);
+            return string;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "";
+        } finally {
+            if (is != null) {
+                try {
+                    is.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    public static String getStringFromContentUri(Context context, Uri uri) {
+        InputStream is = null;
+
+        try {
+            is = context.getContentResolver().openInputStream(uri);
+            String string = getStringFromInputStream(is);
+            Log.i("zestinc", "string = " + string);
+            return string;
         } catch (Exception e) {
             e.printStackTrace();
             return "";
