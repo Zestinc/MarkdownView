@@ -1,3 +1,12 @@
+# Roadmap
+
+- [ ] Update UI to make it more modern
+- [ ] Add edit support
+- [ ] Add keyboard floating format supports
+
+----------------------------
+# Origial App Readme
+
 # MarkdownView
 
 Android library to display markdown text.
